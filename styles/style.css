@@ -6,10 +6,10 @@
 
 .visually-hidden {
   position: absolute;
-  inline-size: 1px;
-  block-size: 1px;
   overflow: hidden;
   clip: rect(0 0 0 0);
+  inline-size: 1px;
+  block-size: 1px;
   clip-path: inset(50%);
   white-space: nowrap;
 }
@@ -20,28 +20,28 @@ html {
 
 .page {
   display: flex;
-  place-content: center;
   flex-wrap: wrap;
-  inline-size: 1200px;
-  block-size: 100%;
+  place-content: center;
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  inline-size: 1200px;
+  block-size: 100%;
 }
 
 .content {
-  width: 1140px;
   display: grid;
-  grid-template-areas: 
-    "result content__details";
+  grid-template-areas: "result content__details";
   align-items: end;
   gap: 30px;
+  inline-size: 1140px;
 }
 
 .result {
   grid-area: result;
+  max-width: 711px;
 }
 
 .result__video-container {
@@ -56,12 +56,13 @@ html {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .search-form {
   display: flex;
-  align-items: start;
   justify-content: space-between;
+  align-items: start;
 }
 
 .search-form__fieldset {
@@ -70,8 +71,8 @@ html {
 
 .search-form__fieldset-title {
   margin-bottom: 5px;
-  font-size: 18px;
   font-weight: 400;
+  font-size: 18px;
 }
 
 .search-form__label {
@@ -92,19 +93,19 @@ html {
 }
 
 .search-form__textfield {
-  width: 225px;
-  appearance: none;
+  min-width: 225px;
   border: none;
   border-top: 1px solid white;
   border-bottom: 1px solid white;
-  background: transparent;
   color: inherit;
-  font-size: inherit;
   font-family: inherit;
+  font-size: inherit;
+  background: transparent;
+  appearance: none;
 }
 
 .search-form__textfield::placeholder {
-  color: #FFFFFFB2;
+  color: #ffffffb2;
 }
 
 .search-form__textfield:focus {
@@ -131,8 +132,8 @@ html {
 }
 
 .search-form__pseudo-checkbox::after {
+  content: "";
   display: none;
-  content: '';
   width: 15px;
   height: 15px;
   background-color: white;
@@ -143,19 +144,19 @@ html {
 }
 
 .button {
-  height: 34px;
+  min-height: 34px;
   border: 1px solid white;
   color: white;
-  background: transparent;
   font-family: inherit;
-  font-size: inherit;
   font-weight: 700;
+  font-size: inherit;
+  background: transparent;
   cursor: pointer;
 }
 
 .search-form__submit-button {
-  width: 194px;
   align-self: end;
+  min-width: 194px;
 }
 
 .more-button {
@@ -185,16 +186,17 @@ html {
 .content__details {
   grid-area: content__details;
   width: 100%;
+  min-width: 399px;
   height: 100%;
 }
 
 .title {
   margin-bottom: 26px;
-  text-transform: uppercase;
   font-family: Oswald, sans-serif;
-  font-size: 75px;
   font-weight: 700;
+  font-size: 75px;
   line-height: 70.5px;
+  text-transform: uppercase;
 }
 
 .content__accent {
@@ -204,7 +206,7 @@ html {
 .content__list-container {
   position: relative;
   height: 298px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .content__list {
@@ -219,8 +221,8 @@ html {
 
 .content__card-link {
   display: block;
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 }
 
 .content__card-link:hover {
@@ -238,7 +240,7 @@ html {
   outline-offset: 0;
 }
 
-.content__card-link:active, 
+.content__card-link:active,
 .content__card-link_current {
   background-color: #545050;
 }
@@ -249,20 +251,21 @@ html {
 }
 
 .content__video-card-description-container {
-  width: 196px;
   flex-grow: 1;
+  width: 100%;
+  max-width: 196px;
 }
 
 .content__video-card-title {
   margin-bottom: 6px;
-  text-transform: uppercase;
+  overflow-x: clip;
   font-family: Oswald, sans-serif;
+  font-weight: 700;
   font-size: 30px;
   line-height: 30px;
-  font-weight: 700;
-  overflow-x: clip;
-  white-space: nowrap;
+  text-transform: uppercase;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .content__video-card-description {
@@ -308,5 +311,5 @@ ol {
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
 }
